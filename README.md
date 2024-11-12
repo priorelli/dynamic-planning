@@ -22,15 +22,15 @@ Plots can be generated through *plot.py*, either with the option `-d` for the be
 
 The tasks are organized as follows:
 
-1. *2.1_simple_agent/*: a basic 1-DoF agent that has to reach a fixed position;
-2. *2.2_tracking_objects/*: a 1-DoF agent that has to track a moving object;
-3. *2.3_object_affordances/*: a 3-DoF agent that maintains distinct body potential configurations for each object and distinct potential trajectories for each intention; this agent has to reach the red ball and then the green square;
-4. *3.1_intrinsic_extrinsic/*: a hierarchical 3-DoF agent that has to reach the red ball while avoiding the green square;
-5. *3.2_deep_hierarchies/*: a (deep) hierarchical 8-DoF agent that has to reach the red ball with a finger;
-6. *3.3_self_others/*: a 3-DoF agent that has to reach the elbow of another 4-DoF agent, which in turn has to reach the hand of the first agent;
-7. *4.1_dynamic_inference/*: a 1-DoF agent moving along a circular trajetory and has to infer which one of the two objects is following;
-8. *4.2_dynamic_planning/*: an 8-DoF agent that has to grasp a moving ball;
-9. *4.3_flexible_hierarchies/*: a 4-DoF agent that has to grasp a moving tool and reach a moving ball with the tool's extremity.
+- *2.1_simple_agent/*: a basic 1-DoF agent that has to reach a fixed position;
+- *2.2_tracking_objects/*: a 1-DoF agent that has to track a moving object;
+- *2.3_object_affordances/*: a 3-DoF agent that maintains distinct body potential configurations for each object and distinct potential trajectories for each intention; this agent has to reach the red ball and then the green square;
+- *3.1_intrinsic_extrinsic/*: a hierarchical 3-DoF agent that has to reach the red ball while avoiding the green square;
+- *3.2_deep_hierarchies/*: a (deep) hierarchical 8-DoF agent that has to reach the red ball with a finger;
+- *3.3_self_others/*: a 3-DoF agent that has to reach the elbow of another 4-DoF agent, which in turn has to reach the hand of the first agent;
+- *4.1_dynamic_inference/*: a 1-DoF agent moving along a circular trajetory and has to infer which one of the two objects is following;
+- *4.2_dynamic_planning/*: an 8-DoF agent that has to grasp a moving ball;
+- *4.3_flexible_hierarchies/*: a 4-DoF agent that has to grasp a moving tool and reach a moving ball with the tool's extremity.
 
 ### Advanced configuration
 
