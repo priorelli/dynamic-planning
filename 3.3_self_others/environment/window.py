@@ -90,6 +90,7 @@ class Window(pyglet.window.Window):
         self_norm[:-2] = utils.normalize(
             self.body_1st.get_pos(c.offset_1st), c.norm_cart)
 
+        # hand of 2nd agent at elbow level of 1st agent
         other_self_norm = np.zeros((c.n_joints_2nd, 2))
         other_self_norm[-3] = utils.normalize(
             self.body_2nd.get_pos(c.offset_1st), c.norm_cart)[-1]
@@ -104,12 +105,13 @@ class Window(pyglet.window.Window):
         self_norm = utils.normalize(self.body_2nd.get_pos(c.offset_2nd),
                                     c.norm_cart)
 
+        # hand of 1st agent at hand level of 2nd agent
         other_self_norm = np.zeros((c.n_joints_2nd, 2))
         other_self_norm[-1] = utils.normalize(
             self.body_1st.get_pos(c.offset_2nd), c.norm_cart)[-2]
 
         other_norm = np.zeros((c.n_joints_2nd, 2))
         other_norm[:-2] = utils.normalize(self.body_1st.get_pos(c.offset_2nd),
-                                        c.norm_cart)
+                                          c.norm_cart)
 
         return np.array([self_norm, other_self_norm, other_norm])

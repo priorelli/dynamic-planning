@@ -48,18 +48,20 @@ class Brain:
             ie_1st = IE(input_ext_1st, input_int_1st.T[j], f_0)
             self.modules_1st.append(ie_1st)
 
-        # Link dynamics
-        self.modules_1st[-3].ext.f = f_r
+        # Set dynamics
+        self.modules_1st[-3].ext.f = f_r  # elbow level
         for module in self.modules_1st:
             module.int.f = f_r
 
-        # Link 2nd agent to 1st
+        # 1st agent has only 3 dof
         self.modules_1st[-1].vis.pi_o[:2] = 0.0
         self.modules_1st[-1].ext.pi_eta_x[:2] = 0.0
+        self.modules_1st[-1].prop.pi_o = 0.0
         self.modules_1st[-2].vis.pi_o[:2] = 0.0
         self.modules_1st[-2].ext.pi_eta_x[:2] = 0.0
-        self.modules_1st[-1].prop.pi_o = 0.0
         self.modules_1st[-2].prop.pi_o = 0.0
+
+        # Set observation of 2nd agent for elbow level
         self.modules_1st[-3].vis.pi_o[1] = c.pi_vis_obj
 
         #######
@@ -87,16 +89,18 @@ class Brain:
             ie_2nd = IE(input_ext_2nd, input_int_2nd.T[j], f_0)
             self.modules_2nd.append(ie_2nd)
 
-        # Link dynamics
-        self.modules_2nd[-1].ext.f = f_r
+        # Set dynamics
+        self.modules_2nd[-1].ext.f = f_r  # hand level
         for module in self.modules_2nd:
             module.int.f = f_r
 
-        # Link 1st agent to 2nd
+        # 1st agent has only 3 dof
         self.modules_2nd[-1].vis.pi_o[2] = 0.0
-        self.modules_2nd[-2].vis.pi_o[2] = 0.0
         self.modules_2nd[-1].ext.pi_eta_x[2] = 0.0
+        self.modules_2nd[-2].vis.pi_o[2] = 0.0
         self.modules_2nd[-2].ext.pi_eta_x[2] = 0.0
+
+        # Set observation of 1st agent for hand level
         self.modules_2nd[-1].vis.pi_o[1] = c.pi_vis_obj
 
     # Initialize beliefs

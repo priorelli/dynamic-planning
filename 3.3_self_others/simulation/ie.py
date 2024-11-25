@@ -32,8 +32,8 @@ class IE:
         pi_eta_x_ext[:, -1] = c.pi_phi
 
         pi_vis = np.zeros((c.n_objects, 2))
-        pi_vis[0] = c.pi_vis
-        pi_vis[2] = c.pi_vis_obj
+        pi_vis[0] = c.pi_vis  # visual observations of self
+        pi_vis[2] = c.pi_vis_obj  # visual observations of other
 
         # Initialize units
         self.int = Unit(dim=(c.n_orders, c.n_objects, 2),
