@@ -48,10 +48,10 @@ offset_1st = (300, 100)
 joints_1st = {}
 joints_1st['trunk'] = {'link': None, 'angle': start_1st[0],
                        'size': (lengths_1st[0], 50)}
-joints_1st['shoulder'] = {'link': 'trunk', 'angle': start_1st[1],
-                          'size': (lengths_1st[1], 40)}
-joints_1st['elbow'] = {'link': 'shoulder', 'angle': start_1st[2],
-                       'size': (lengths_1st[2], 36)}
+joints_1st['elbow'] = {'link': 'trunk', 'angle': start_1st[1],
+                       'size': (lengths_1st[1], 40)}
+joints_1st['hand'] = {'link': 'elbow', 'angle': start_1st[2],
+                      'size': (lengths_1st[2], 36)}
 n_joints_1st = len(joints_1st)
 
 # Body (2nd agent)
@@ -68,8 +68,8 @@ joints_2nd['elbow'] = {'link': 'shoulder', 'angle': start_2nd[2],
                        'size': (lengths_2nd[2], 36)}
 joints_2nd['wrist'] = {'link': 'elbow', 'angle': start_2nd[3],
                        'size': (lengths_2nd[3], 30)}
-joints_2nd['finger'] = {'link': 'wrist', 'angle': start_2nd[4],
-                        'size': (lengths_2nd[4], 20)}
+joints_2nd['hand'] = {'link': 'wrist', 'angle': start_2nd[4],
+                      'size': (lengths_2nd[4], 20)}
 n_joints_2nd = len(joints_2nd)
 
 norm_polar = [-180.0, 180.0]
