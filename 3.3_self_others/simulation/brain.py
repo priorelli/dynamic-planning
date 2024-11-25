@@ -49,7 +49,7 @@ class Brain:
             self.modules_1st.append(ie_1st)
 
         # Set dynamics
-        self.modules_1st[-3].ext.f = f_r  # elbow level
+        self.modules_1st[-3].ext.f = f_r  # hand level
         for module in self.modules_1st:
             module.int.f = f_r
 
@@ -61,7 +61,7 @@ class Brain:
         self.modules_1st[-2].ext.pi_eta_x[:2] = 0.0
         self.modules_1st[-2].prop.pi_o = 0.0
 
-        # Set observation of 2nd agent for elbow level
+        # Set observation of 2nd agent for hand level
         self.modules_1st[-3].vis.pi_o[1] = c.pi_vis_obj
 
         #######
