@@ -19,7 +19,6 @@ def f_r(x, lmbda):
 # Define brain class
 class Brain:
     def __init__(self, idxs_1st, idxs_2nd):
-        # Initialize master
         ref = utils.normalize(np.array(
             c.offset_2nd) - np.array(c.offset_1st), c.norm_cart)
 
