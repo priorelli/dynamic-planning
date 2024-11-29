@@ -46,10 +46,10 @@ class Discrete:
         self.H_A = self.entropy()
 
         # Initialize observations and log evidences
-        self.o_int = self.get_expected_obs(self.A_ext, self.prior)
+        self.o_int = np.zeros(1)
         self.o_ext = self.get_expected_obs(self.A_ext, self.prior)
 
-        self.L_int = np.zeros(3)
+        self.L_int = np.zeros(1)
         self.L_ext = np.zeros((c.n_joints + 1, len(self.A_ext)))
 
     # Get state-index mappings
@@ -217,7 +217,7 @@ class Discrete:
 
         # Compute next observations
         self.prior = self.get_qs_next(self.P_u, qs_current)
-        self.o_int[:] = self.get_expected_obs(self.A_ext, self.prior)
+        self.o_int[:] = [1.0]
         self.o_ext[:] = self.get_expected_obs(self.A_ext, self.prior)
 
         if c.debug:

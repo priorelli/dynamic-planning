@@ -58,7 +58,7 @@ class Tool(pyglet.shapes.Rectangle):
 
         w, h = size
         self.shape = pymunk.Segment(self.body, (0, 0), (w, 0), h / 2)
-        self.shape.density = 1
+        self.shape.density = 0.1
         self.shape.friction = 1
         self.shape.elasticity = 1
 

@@ -15,12 +15,12 @@ dt = 0.3
 # Simulation
 ball_pos = [-300, 300]
 ball_size = 24
-ball_vel = 10
+ball_vel = 6
 ball_dir = None
 
 tool_pos = [350, 300]
 tool_length = 200
-tool_vel = 5
+tool_vel = 3
 tool_dir = None
 tool_angle = 30
 
@@ -43,8 +43,8 @@ pi_vis = 0.1
 pi_vis_obj = 1.0
 pi_phi = 1.0
 
-lambda_int = 0.0
-lambda_ext = 0.7
+lambda_int = 0.5
+lambda_ext = 0.8
 
 lr_int = 1.0
 lr_len = 0.0
@@ -54,7 +54,7 @@ lr_a = 1.0
 n_orders = 2
 n_objects = 3
 n_policy = 3
-n_tau = 20
+n_tau = 10
 
 k_d = 0.0
 gain_prior = 0.5

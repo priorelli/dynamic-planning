@@ -12,6 +12,11 @@ def f_0(x, lmbda):
     return x * 0.0
 
 
+# Keep tool angle
+def f_int(x, lmbda):
+    return (torch.stack([x[0], x[1], x[1]], -2) - x) * lmbda
+
+
 # Reach tool
 def f_t(x, lmbda):
     return (torch.stack([x[1], x[1], x[2]], -2) - x) * lmbda
@@ -57,7 +62,10 @@ class Brain:
         self.modules.append(ie)
 
         # Link dynamics
+        self.modules[-1].int.F_m[0] = f_int  # keep tool angle
+
         self.modules[-2].ext.F_m[1] = f_t  # reach tool
+
         self.modules[-2].ext.F_m[2] = f_b  # reach ball (hand level)
         self.modules[-1].ext.F_m[2] = f_b  # reach ball (virtual level)
 

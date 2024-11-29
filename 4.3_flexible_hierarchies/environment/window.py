@@ -9,7 +9,7 @@ from environment.objects import Objects
 
 class Window(pyglet.window.Window):
     def __init__(self):
-        super().__init__(c.width, c.height, 'Flexible hierarchies',
+        super().__init__(c.width, c.height, 'Tool use',
                          vsync=False)
         # Start physics engine
         self.space = pymunk.Space()
@@ -130,7 +130,7 @@ class Window(pyglet.window.Window):
 
             self.space.add(pymunk.RotaryLimitJoint(
                 self.body.joints[-1].body, self.objects.tool.body,
-                -np.radians(10), np.radians(10)))
+                -0.1, 0.1))
 
         if self.picked:
             self.objects.tool.set_vel(0, 0)

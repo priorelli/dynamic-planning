@@ -40,7 +40,7 @@ class IE:
                         inputs=[input_int[0], input_int[1]],
                         v=o_int, L=L_int,
                         pi_eta_x=c.pi_eta_x_int, p_x=c.p_x_int,
-                        pi_x=c.pi_x_int, lr=lr_int, F_m=[f_0, f_0, f_0],
+                        pi_x=c.pi_x_int, lr=lr_int, F_m=[f_0],
                         lmbda=c.lambda_int)
 
         self.ext = Unit(dim=(c.n_orders, c.n_objects, 3),
