@@ -44,7 +44,7 @@ pi_vis_obj = 1.0
 pi_phi = 1.0
 
 lambda_int = 0.0
-lambda_ext = 0.8
+lambda_ext = 0.7
 
 lr_int = 1.0
 lr_len = 0.0
@@ -64,7 +64,7 @@ w_bmc = 2.0
 # Body
 start = [-40, 0, 0, 0]
 lengths = [100, 140, 180, 80]
-reach_dist = 10
+reach_dist = 15
 
 joints = {}
 joints['trunk'] = {'link': None, 'angle': start[0],

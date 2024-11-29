@@ -122,5 +122,16 @@ class Window(pyglet.window.Window):
 
             self.space.add(pymunk.PinJoint(
                 self.body.joints[-1].body, self.objects.tool.body))
+
+            self.objects.tool.motor = pymunk.SimpleMotor(
+                self.body.joints[-1].body, self.objects.tool.body, 0)
+            self.objects.tool.motor.max_force = 2e10
+            self.space.add(self.objects.tool.motor)
+
             self.space.add(pymunk.RotaryLimitJoint(
-                self.body.joints[-1].body, self.objects.tool.body, 0, 0.1))
+                self.body.joints[-1].body, self.objects.tool.body,
+                -np.radians(10), np.radians(10)))
+
+        if self.picked:
+            self.objects.tool.set_vel(0, 0)
+            self.objects.tool.motor.rate = 0
