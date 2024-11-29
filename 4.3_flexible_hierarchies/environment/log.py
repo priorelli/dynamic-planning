@@ -22,7 +22,7 @@ class Log:
         self.ball_pos = np.zeros((c.n_steps, 2))
         self.est_ball_pos = np.zeros_like(self.est_tool_pos)
 
-        self.causes_int = np.zeros((c.n_steps, 3))
+        self.causes_int = np.zeros((c.n_steps, 1))
         self.causes_ext = np.zeros((c.n_steps, 3))
 
         self.disc_actions = np.zeros((c.n_steps, 3))
