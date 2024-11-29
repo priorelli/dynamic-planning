@@ -1,6 +1,6 @@
 # Window
-width = 1800
-height = 1400
+width = 1500
+height = 1200
 off_x = 0
 off_y = 0
 
