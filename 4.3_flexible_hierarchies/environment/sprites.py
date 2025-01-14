@@ -51,8 +51,8 @@ class Ball(pyglet.shapes.Circle):
 
 class Tool(pyglet.shapes.Rectangle):
     def __init__(self, batch, space, size, pos):
-        super().__init__(*(offset + pos), *size, (100, 200, 100), batch,
-                         group=pyglet.graphics.Group(0))
+        super().__init__(*(offset + pos), *size, color=(100, 200, 100),
+                         batch=batch, group=pyglet.graphics.Group(0))
         self.body = pymunk.Body()
         self.body.position = offset + pos
 
@@ -122,8 +122,8 @@ class Joint(pyglet.shapes.Circle):
 
 class Link(pyglet.shapes.Rectangle):
     def __init__(self, batch, space, size, pin, angle):
-        super().__init__(*pin.position, *size, (0, 100, 200), batch,
-                         group=pyglet.graphics.Group(2))
+        super().__init__(*pin.position, *size, color=(0, 100, 200),
+                         batch=batch, group=pyglet.graphics.Group(2))
         self.body = pymunk.Body()
         self.body.position = pin.position
         self.body.angle = np.radians(angle)

@@ -38,7 +38,7 @@ class Joint(pyglet.shapes.Circle):
 
 class Link(pyglet.shapes.Rectangle):
     def __init__(self, batch, space, size, pin, angle, color):
-        super().__init__(*pin.position, *size, color, batch,
+        super().__init__(*pin.position, *size, color=color, batch=batch,
                          group=pyglet.graphics.Group(2))
         self.body = pymunk.Body()
         self.body.position = pin.position
