@@ -19,15 +19,9 @@ def plot_dynamics(log, width):
     F_m = log['F_m']
 
     L_ext = log['L_ext']
-    # L_softmax = np.zeros((len(L_ext), 2))
-    # for s, step in enumerate(L_ext):
-    #     L_softmax[s] = utils.softmax(step[:2] * c.gain_evidence)
-    # L_softmax[:30, :] = 0.5
-
     L_softmax = np.zeros((len(L_ext), 2))
     for s, step in enumerate(L_ext):
         L_softmax[s] = utils.softmax(step * c.gain_evidence, c.w_bmc)
-    # L_softmax[:c.n_tau, :] = 0.5
 
     # Initialize plots
     fig, axs = plt.subplots(1, figsize=(22, 16))

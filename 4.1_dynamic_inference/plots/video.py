@@ -99,11 +99,11 @@ def record_video(log, width):
         #             color='darkgreen', zorder=2)
 
         # Draw quivers
-        x_true, u_true = pos[n, -1], est_vel[n]
+        x_est, u_est = pos[n, -1], est_vel[n]
         x_pred1, u_pred1 = pos[n, -1], F_m[n, 0]
         x_pred2, u_pred2 = pos[n, -1], F_m[n, 1]
 
-        q = axs.quiver(*x_true.T, *u_true.T, angles='xy', color='navy',
+        q = axs.quiver(*x_est.T, *u_est.T, angles='xy', color='navy',
                        width=0.006, scale=400)
         q = axs.quiver(*x_pred1.T, *u_pred1.T, angles='xy',
                        color='r', width=0.006, scale=700)
