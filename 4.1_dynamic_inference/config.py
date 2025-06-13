@@ -31,11 +31,11 @@ eta_x_int = [0]
 x_int_start = None
 
 pi_eta_x_int = 0.0
-pi_x_int = 1.0
-p_x_int = 2.0
+pi_x_int = 0.5
+p_x_int = 1.0
 pi_prop = 1.0
 
-pi_eta_x_ext = 0.5
+pi_eta_x_ext = 0.4
 pi_x_ext = pi_x_int
 p_x_ext = p_x_int
 pi_vis = 1.0

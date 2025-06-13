@@ -57,9 +57,9 @@ class Discrete:
         A = np.zeros((2, self.n_states))
 
         for state, idx in self.state_to_idx.items():
-            if state[0] == 'BALL':
+            if state == 'BALL':
                 A[0, idx] = 1.0
-            elif state[0] == 'SQUARE':
+            elif state == 'SQUARE':
                 A[1, idx] = 1.0
 
         return A
