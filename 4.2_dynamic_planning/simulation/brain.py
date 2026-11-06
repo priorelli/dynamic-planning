@@ -1,3 +1,4 @@
+import numpy as np
 import torch
 import utils
 import config as c
@@ -107,5 +108,8 @@ class Brain:
         # Update all units
         for unit in self.units:
             unit.update(c.dt)
+
+        limit = c.max_action / (c.norm_polar[1] - c.norm_polar[0]) * 2
+        self.prop.actions = np.clip(self.prop.actions, -limit, limit)
 
         return utils.denormalize(self.prop.actions, c.norm_polar)

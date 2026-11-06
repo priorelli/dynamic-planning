@@ -52,6 +52,7 @@ gain_prior = 0.1
 gain_evidence_int = 10.0
 gain_evidence_ext = 30.0
 w_bmc = 2.0
+max_action = 1.5
 
 # Body
 start = [0, 0, 0, 0, 0, 0, 0, 0]

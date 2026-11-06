@@ -111,6 +111,6 @@ class Brain:
             module.update()
 
         actions = np.array([module.prop.actions for
-                            module in self.modules[:-1]])
+                            module in self.modules[:-1]]).ravel()
 
         return utils.denormalize(actions, c.norm_polar)

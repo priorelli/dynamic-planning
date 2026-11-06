@@ -33,12 +33,9 @@ class Window(pyglet.window.Window):
         self.picked, self.touch = False, np.zeros(2)
 
         # Start collision handlers
-        self.handlers = []
         for i in range(2):
-            handler = self.space.add_collision_handler(i + 1, 3)
-            handler.begin = self.begin(i)
-            handler.separate = self.separate(i)
-            self.handlers.append(handler)
+            self.space.on_collision(i + 1, 3, begin=self.begin(i),
+                                    separate=self.separate(i))
 
         # Sample objects
         self.objects.sample()
@@ -78,7 +75,6 @@ class Window(pyglet.window.Window):
     def begin(self, i):
         def f(arbiter, space, data):
             self.touch[i] = 1
-            return True
         return f
 
     def separate(self, i):
