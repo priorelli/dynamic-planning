@@ -77,6 +77,6 @@ class Brain:
         for module in self.modules:
             module.update()
 
-        actions = np.array([module.prop.actions for module in self.modules])
+        actions = np.array([module.prop.actions for module in self.modules]).ravel()
 
         return utils.denormalize(actions, c.norm_polar)
